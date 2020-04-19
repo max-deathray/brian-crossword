@@ -1,0 +1,138 @@
+body {
+  font: 14px 'Century Gothic', Futura, sans-serif;
+  margin: 20px;
+}
+
+ol,
+ul {
+  padding-left: 30px;
+}
+
+.board-row:after {
+  clear: both;
+  content: '';
+  display: table;
+}
+
+.status {
+  margin-bottom: 10px;
+}
+
+.square {
+  background: #fff;
+  border: 1px solid #999;
+  float: left;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 34px;
+  height: 34px;
+  margin-right: -1px;
+  margin-top: -1px;
+  padding: 0;
+  text-align: center;
+  width: 34px;
+}
+
+.black {
+  background: black;
+  border: 1px solid black;
+  float: left;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 34px;
+  height: 34px;
+  margin-right: -1px;
+  margin-top: -1px;
+  padding: 0;
+  text-align: center;
+  width: 34px;
+}
+
+.square:focus {
+  outline: none;
+}
+
+.kbd-navigation .square:focus {
+  background: #ddd;
+}
+
+.game {
+  display: flex;
+  flex-direction: row;
+}
+
+.game-info {
+  margin-left: 20px;
+}
+
+p {
+  margin: 0;
+}
+
+/* crossword style */
+
+#sample-wrapper {
+  border: 1px solid black;
+  width: 540px;
+  height: 540px;
+  margin: 0 auto;
+}
+
+#wrapper {
+  /* border: 1px solid black; */
+  width: 525px;
+  height: 525px;
+  margin: auto auto;
+  display: grid;
+  grid-template-columns: 34px 34px 34px 34px 34px 34px 34px 34px 34px 34px 34px 34px 34px 34px 34px;
+  grid-template-rows: 34px 34px 34px 34px 34px 34px 34px 34px 34px 34px 34px 34px 34px 34px 34px;
+}
+
+.filled {
+  width: 34px;
+  height: 34px;
+  background: black;
+  border: 1px solid black;
+  padding: 0;
+  margin: 0;
+  float: left;
+}
+
+.empty {
+  /* width: 34px;
+  height: 34px;
+  border: 1px solid #999;
+  margin-right: -1px;
+  margin-top: -1px;
+  padding: 0;
+  margin: 0;
+  float: left; */
+  background: #fff;
+  border: 1px solid #999;
+  float: left;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 34px;
+  height: 34px;
+  margin-right: -1px;
+  margin-top: -1px;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+  width: 34px;
+}
+
+.numbered {
+  counter-increment: value;
+}
+
+.numbered:nth-of-type(n)::before {
+  content: counter(value);
+  font-size: 10px;
+  position: absolute;
+  padding-left: 2px;
+}
+
+input {
+  text-transform: uppercase;
+}
