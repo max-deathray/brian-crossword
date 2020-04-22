@@ -1,13 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 // import { Sample } from './sample.js';
-// import { Across, Down } from './Clues.js';
+import { Across, Down } from './Clues.js';
 
 const Square = ({ answer, numbered }) => {
+  const [input, setInput] = useState('');
+
+  const MAX_LENGTH = 1;
+
+  const onChange = (e) => {
+    setInput(e.target.value);
+  };
+
+  console.log('correct?:', input.toLowerCase() === answer);
+
   return (
     <div className={numbered ? 'numbered' : ''}>
-      <input className="square" type="text" maxLength="1" />
+      <input
+        className="square"
+        type="text"
+        maxLength={MAX_LENGTH}
+        onChange={onChange}
+      />
     </div>
   );
 };
@@ -26,8 +41,8 @@ class Board extends React.Component {
           Rachel Simon
         </div>
         <div id="wrapper">
-          {this.renderSquare('p', true)}
-          {this.renderSquare('a', true)}
+          {this.renderSquare('p', true, 0)}
+          {this.renderSquare('a', true, 1)}
           {this.renderSquare('p', true)}
           {this.renderSquare('s', true)}
           <input className="square black" disabled />
@@ -279,8 +294,8 @@ class Game extends React.Component {
           <Board />
         </div>
         {/* <Sample /> */}
-        {/* <Across />
-        <Down /> */}
+        <Across />
+        <Down />
       </div>
     );
   }

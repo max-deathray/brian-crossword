@@ -136,3 +136,7 @@ p {
 input {
   text-transform: uppercase;
 }
+
+.correct {
+  background-color: lightgreen;
+}
